@@ -13,4 +13,5 @@ Link to original: https://www.millisecond.com/forums/Topic14608.aspx?Keywords=ab
   
 Inspired by and stimuli borrowed from code by Qiseng Li  
 https://github.com/QishengLi/virtual_chinrest/  
+Paper they've published on this method: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6976612/
 
