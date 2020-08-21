@@ -7,7 +7,7 @@
 
 Written by: Ariel Zeleznikow-Johnston (ariel.zeleznikow-johnston@monash.edu)
 
-Last updated: 2020-02-12 by Ariel Zeleznikow-Johnston
+Last updated: 2020-08-21 by Ariel Zeleznikow-Johnston
 
 Modified from code released by Millisecond Software written by Katja Borchert
 Link to original: https://www.millisecond.com/forums/Topic14608.aspx?Keywords=absoulte%20sizing
@@ -66,6 +66,12 @@ Demos everything in 'calibration_main.iqx'
 
 <values>
 /squaresize = 50 //squaresize:		sets the size of the square in mm (default: 50mm = 5cm)
+
+// constants to be used for demo screen
+/peripheral_scale = 1 // FIXED SIZE VERSION
+/radius_central = 1 // arbitrarily chosen 1 DVA
+/radius_peripheral = 10 // arbitrarily chosen 10 DVA
+/stimulus_size = 0.1 // arbitarily chosen 1 DVA
 </values>
 
 *******************************************************************************************************************
@@ -80,7 +86,7 @@ Note: the width and height of the stimulus needs to be explicitly defined in pix
 /width = 1px * values.squaresize * expressions.ratio_pxpermm 
 /height = 1px * values.squaresize * expressions.ratio_pxpermm
 /color = blue
-/position = (50%, 50%)
+/position = (50%, 20%)
 </shape>
 
 <text squareinstructions>
@@ -92,7 +98,41 @@ Press Spacebar to quit.")
 /position = (50%, 85%)
 </text>
 
+<text DVA_1_Pos>
+/items = ("+1
+DVA")
+/position = ((1px * values.DVA_to_distance * values.ratio_pxpermm * 1) + display.canvaswidth/2, 50%)
+</text>
 
+<text DVA_5_Pos>
+/items = ("+5
+DVA")
+/position = ((1px * values.DVA_to_distance * values.ratio_pxpermm * 5) + display.canvaswidth/2, 50%)
+</text>
+
+<text DVA_10_Pos>
+/items = ("+10
+DVA")
+/position = ((1px * values.DVA_to_distance * values.ratio_pxpermm * 10) + display.canvaswidth/2, 50%)
+</text>
+
+<text DVA_1_Neg>
+/position = ((1px * values.DVA_to_distance * values.ratio_pxpermm * -1) + display.canvaswidth/2, 50%)
+/items = ("-1
+DVA")
+</text>
+
+<text DVA_5_Neg>
+/position = ((1px * values.DVA_to_distance * values.ratio_pxpermm * -5) + display.canvaswidth/2, 50%)
+/items = ("-5
+DVA")
+</text>
+
+<text DVA_10_Neg>
+/position = ((1px * values.DVA_to_distance * values.ratio_pxpermm * -10) + display.canvaswidth/2, 50%)
+/items = ("-10
+DVA")
+</text>
 *******************************************************************************************************************
 *******************************************************************************************************************
 	TRIALS
@@ -101,7 +141,7 @@ Press Spacebar to quit.")
 
 Note: presents the square of the specified size
 <trial square>
-/stimulusframes = [1 = demo_square, squareinstructions]
+/stimulusframes = [1 = demo_square, squareinstructions, DVA_1_Pos, DVA_5_Pos, DVA_10_Pos, DVA_1_Neg, DVA_5_Neg, DVA_10_Neg]
 /validresponse = (57)
 </trial>
 
