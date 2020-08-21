@@ -214,7 +214,6 @@ When ready, press SPACE to continue and carefully follow the instructions on the
 / fontstyle = ("Arial", 2%, false, false, false, false, 5, 1)
 / txbgcolor = (127,127,127)
 / txcolor = yellow
-/erase = false
 </text>
 
 <text ball_visible>
@@ -223,8 +222,6 @@ When ready, press SPACE to continue and carefully follow the instructions on the
 / fontstyle = ("Arial", 2.5%, false, false, false, false, 5, 1)
 / txbgcolor = (127,127,127)
 / color = green
-/ erase = false
-
 </text>
 
 <text ball_invisible>
@@ -233,7 +230,6 @@ When ready, press SPACE to continue and carefully follow the instructions on the
 / fontstyle = ("Arial", 2.5%, false, false, false, false, 5, 1)
 / txbgcolor = (127,127,127)
 / color = red
-/ erase = false
 </text>
 
 
@@ -244,7 +240,8 @@ When ready, press SPACE to continue and carefully follow the instructions on the
 3. Stare at the middle of the screen, keeping your head in the same position as before.
 4. Without moving your head or face, use your left eye to focus on the black square.
 5. The flickering red ball will disappear as it moves from right to left. Ignore the flickering.
-6. Press the <ENTER> key as soon as the ball disappears properly from your eye sight (not just due to flickering).
+6. Press the <ENTER> key as soon as the ball disappears properly from your eye sight (not just due to flickering
+or running off the edge of the screen).
 7. You will do this three times so we can make sure we get the right distance."
 </item>
 
@@ -385,7 +382,7 @@ Trials
 	} else {
 		values.circle_x = values.circle_x_initial; // return it to it's initial position
 	}
-	if ((values.circle_x < 50%) && (values.circle_x > 45%)){
+	if ((values.circle_x < 50%) && (values.circle_x > 40%)){
 			text.ball_invisible.textcolor = red;
 			text.ball_visible.textcolor = grey;
 			shape.circle.color = grey;
@@ -399,21 +396,25 @@ Trials
 /validresponse = (57)
 /stimulusframes = [1 = circle, square, instructions_blindspot_demo, blindspot_title, ball_invisible, ball_visible]
 / trialduration = 50
-/ ontrialend = [if (trial.findblindspot_demo.response != 57){]
 /branch = [if (trial.findblindspot_demo.response != 57) {
 	trial.findblindspot_demo;
 	} else {
-		trial.findblindspot_demo.clearstimulusframes();
-		text.ball_invisible.textcolor = grey;
-		text.ball_visible.textcolor = grey;
-		text.instructions_blindspot_demo.textcolor = grey;
 		values.circle_x = values.circle_x_initial; // return it to the starting position
 		}
 	]
+/ ontrialend = [if (trial.findblindspot_demo.response != 57) {
+	trial.findblindspot_demo;
+	} else {
+		values.circle_x = values.circle_x_initial; // return it to the starting position
+		}
+]
+
 </trial>
 
 <trial findblindspot>
 / ontrialbegin = [
+	// trying to delete the damn instructions at the trial end
+		
 	shape.circle.color = red;
 	if (values.circle_x != 0){
 			values.circle_x -= values.increment_circle
