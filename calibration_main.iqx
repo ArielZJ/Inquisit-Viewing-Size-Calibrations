@@ -202,7 +202,7 @@ On the next screen you will see:
 
 2. A flickering red ball moving from left to right. 
 The flickering ball will appear to disappear from view at some point and then reappear further to the left.
-There is a demonstration of what that will look like on this page.
+This page demonstrates what it will look like.
 
 When ready, press SPACE to continue and carefully follow the instructions on the next page.
 "
@@ -211,7 +211,7 @@ When ready, press SPACE to continue and carefully follow the instructions on the
 <text instructions_blindspot_demo>
 /items = instructions_blindspot_demo
 /position = (50%, 70%)
-/ fontstyle = ("Arial", 2%, false, false, false, false, 5, 1)
+/ fontstyle = ("Arial", 2.5%, false, false, false, false, 5, 1)
 / txbgcolor = (127,127,127)
 / txcolor = yellow
 </text>
@@ -242,13 +242,13 @@ When ready, press SPACE to continue and carefully follow the instructions on the
 5. The flickering red ball will disappear as it moves from right to left. Ignore the flickering.
 6. Press the <ENTER> key as soon as the ball disappears properly from your eye sight (not just due to flickering
 or running off the edge of the screen).
-7. You will do this three times so we can make sure we get the right distance."
+7. You will do this three times so we can make sure we get the right distance. The ball will reset each time."
 </item>
 
 <text instructions_blindspot>
 /items = instructions_blindspot
 /position = (50%, 70%)
-/ fontstyle = ("Arial", 2%, false, false, false, false, 5, 1)
+/ fontstyle = ("Arial", 2.5%, false, false, false, false, 5, 1)
 / txbgcolor = (127,127,127)
 / txcolor = yellow
 /erase = false
