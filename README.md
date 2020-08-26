@@ -4,7 +4,7 @@
 'calibration_main.iqx' contains the code necessary to obtain the participant's viewing distance.  
 'calibration_demo.iqx' runs a demonstration if you have Inquisit installed on your computer.  
   
-You can run a demo of the calibration procedure on the web here: https://mili2nd.co/yiub  
+You can run a demo of the calibration procedure on the web here: https://mili2nd.co/eoub  
 
 Written by: Ariel Zeleznikow-Johnston (ariel.zeleznikow-johnston@monash.edu)  
 
