@@ -191,7 +191,8 @@ latency: 						the response latency (in ms)
 /columns = [build, date, time, subject, group, blockcode, blocknum, trialcode, trialnum, 
 stimulusitem, response, correct, latency,
  expressions.ratio_pxpermm, values.screen_size_x, values.screen_size_y, values.viewer_distance,
-values.line_size,values.calibration_image_size,list.viewing_distance.currentvalue]
+values.line_size,values.calibration_image_size,list.viewing_distance.currentvalue,
+values.screen_x_threshold,values.distance_threshold]
  /separatefiles = true
 </data>
 
