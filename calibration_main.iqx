@@ -60,6 +60,7 @@ Code
 /increment_px = 5px
 
 /radians_to_degrees = 57.2958
+/trial_duration = 75 
 
 // values for positioning (mm)
 / thumb_size = 20
@@ -401,7 +402,7 @@ Trials
 /validresponse = (57)
 / recorddata = false
 /stimulusframes = [1 = circle, square, instructions_blindspot_demo, blindspot_title, ball_invisible, ball_visible]
-/ trialduration = 50
+/ trialduration = values.trial_duration
 /branch = [if (trial.findblindspot_demo.response != 57) {
 	trial.findblindspot_demo;
 	} else {
@@ -431,7 +432,7 @@ Trials
 ]
 /validresponse = (28)
 /stimulusframes = [1 = circle, square, instructions_blindspot, blindspot_title, blindspot_progress]
-/ trialduration = 50
+/ trialduration = values.trial_duration
 / recorddata = false
 /branch = [if (trial.findblindspot.response != 28) {
 	trial.findblindspot;
